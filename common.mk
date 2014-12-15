@@ -10,7 +10,7 @@ common_includes += hardware/qcom/display-caf-hdx/libvirtual
 
 ifeq ($(TARGET_USES_POST_PROCESSING),true)
     common_flags     += -DUSES_POST_PROCESSING
-    common_includes  += $(TARGET_OUT_HEADERS)/pp/inc
+#    common_includes  += $(TARGET_OUT_HEADERS)/pp/inc
 endif
 
 common_header_export_path := qcom/display-caf-hdx
@@ -43,7 +43,7 @@ endif
 
 
 common_deps  :=
-kernel_includes :=
+kernel_includes := 
 
 # Executed only on QCOM BSPs
 ifeq ($(TARGET_USES_QCOM_BSP),true)
@@ -59,6 +59,6 @@ ifeq ($(call is-vendor-board-platform,QCOM),true)
 # available in the build tree.
 # If the macro is not present, the headers are picked from hardware/qcom/msmXXXX
 # failing which, they are picked from bionic.
-    common_deps += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-    kernel_includes += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#    common_deps += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#    kernel_includes += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 endif
