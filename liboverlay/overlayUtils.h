@@ -253,7 +253,7 @@ enum eIsFg {
 /*
  * Various mdp flags like PIPE SHARE, DEINTERLACE etc...
  * kernel/common/linux/msm_mdp.h
- * INTERLACE_MASK: hardware/qcom/display/libgralloc/badger/fb_priv.h
+ * INTERLACE_MASK: hardware/qcom/display-caf-hdx/libgralloc/badger/fb_priv.h
  * */
 enum eMdpFlags {
     OV_MDP_FLAGS_NONE = 0,
@@ -422,7 +422,7 @@ int getMdpOrient(eTransform rotation);
 const char* getFormatString(int format);
 
 template <class T>
-inline void memset0(T& t) { ::memset(&t, 0, sizeof(t)); }
+inline void memset0(T& t) { ::memset(&t, 0, sizeof(T)); }
 
 template <class T> inline void swap ( T& a, T& b )
 {
